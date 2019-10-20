@@ -11,3 +11,120 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.form-container {
+  width: 100%;
+  margin: 0 auto;
+  background: lightgray;
+  top: 80px;
+}
+
+.header-container {
+  background: aquamarine;
+  margin: 0 auto;
+  min-height: 100px;
+  padding-top: 20px;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.ant-calendar-picker-input {
+  width: 737px !important;
+  display: flex;
+}
+
+.ant-input {
+  border: 1px solid black !important;
+  width: 70%;
+}
+
+.ant-btn {
+  border: 1px solid darkcyan !important;
+  width: 30%;
+  background: darkcyan;
+  color: #fff;
+}
+
+.submit-btn {
+  color: #fff;
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+}
+
+.submit-btn :hover {
+  color: #000;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.controls {
+  margin: 0 auto;
+  text-transform: uppercase;
+  /*background: cornsilk;*/
+  height: auto;
+  width: fit-content;
+  font-weight: bolder;
+  font-size: larger;
+  padding-top: 2px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.description {
+  width: fit-content;
+  margin-left: 1%;
+  animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.view {
+  cursor: pointer;
+  width: fit-content;
+  background: skyblue;
+  justify-content: end;
+  padding: 6px;
+  margin-left: 300px;
+}
+
+.register {
+  cursor: pointer;
+  background: #09d3ac;
+  width: fit-content;
+  padding: 6px;
+  justify-content: left;
+}
+
+.motto {
+  font-size: small;
+}
