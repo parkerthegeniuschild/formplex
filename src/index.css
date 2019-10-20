@@ -20,19 +20,26 @@ code {
 .form-container {
   width: 100%;
   margin: 0 auto;
-  background: lightgray;
-  top: 80px;
+  background: #fff;
+  top: 30px;
 }
 
 .header-container {
-  background: aquamarine;
+  background: #a0ca99;
   margin: 0 auto;
-  min-height: 100px;
   padding-top: 20px;
+  height: 80px;
 }
 
-.App-logo {
-  height: 40vmin;
+.logo {
+  color: #8e5b00;
+  margin-top: 0;
+  width: fit-content;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-family: 'Fascinate Inline', cursive;
+  font-size: 40px;
+  padding-top: 0;
 }
 
 .App-header {
@@ -56,14 +63,14 @@ code {
 }
 
 .ant-input {
-  border: 1px solid black !important;
+  border: 1px solid #8e5b00 !important;
   width: 70%;
 }
 
 .ant-btn {
-  border: 1px solid darkcyan !important;
+  border: 1px solid #ac7c25 !important;
   width: 30%;
-  background: darkcyan;
+  background: #ac7c25;
   color: #fff;
 }
 
@@ -74,24 +81,20 @@ code {
   text-align: center;
 }
 
-.submit-btn :hover {
-  color: #000;
-}
-
 h1 {
   font-size: 30px;
+  color: #8a000a
 }
 
 .controls {
+  display: none;
   margin: 0 auto;
   text-transform: uppercase;
-  /*background: cornsilk;*/
   height: auto;
   width: fit-content;
   font-weight: bolder;
   font-size: larger;
   padding-top: 2px;
-  display: flex;
   flex-direction: row;
 
 }
@@ -99,7 +102,13 @@ h1 {
 .description {
   width: fit-content;
   margin-left: 1%;
+}
+
+.motto {
+  font-size: medium;
+  font-weight: bold;
   animation: blinker 3s linear infinite;
+  font-family: Tahoma, serif;
 }
 
 @keyframes blinker {
@@ -123,8 +132,4 @@ h1 {
   width: fit-content;
   padding: 6px;
   justify-content: left;
-}
-
-.motto {
-  font-size: small;
 }

@@ -1,6 +1,40 @@
 import React, { Component } from "react";
+import dummyData from '../dummydata';
 
 export default class Table extends Component {
+
+    componentDidMount() {
+        // seed the localStorage with dummy data
+        this.localStorageSeeder();
+        this.displayUser()
+    }
+
+    localStorageSeeder = () => {
+
+        // if there is data, then don't seed
+        if (!localStorage.getItem('formplex')) {
+            console.log(dummyData);
+            localStorage.setItem('formplex', JSON.stringify(dummyData));
+        }
+    };
+
+    displayUser = () => {
+        const users = JSON.parse(localStorage.getItem('formplex')) || [];
+
+        let info = '';
+        for (let i = 0; i < users.length; i++) {
+             info += `<tr>
+                    <th> ${users[i]['first_name']} </th>
+                    <th> ${users[i]['last_name']} </th>
+                    <th> ${users[i]['birthday']} </th>
+                    <th> ${users[i]['age']} </th>
+                    <th> ${users[i]['hobby']} </th>
+                </tr>`
+        };
+
+        const div = document.querySelector('.main-table');
+        div.innerHTML = info;
+    };
 
     render() {
         return (
@@ -16,16 +50,11 @@ export default class Table extends Component {
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>cell1_1</td>
-                            <td>cell2_1</td>
-                            <td>cell3_1</td>
-                            <td>cell4_1</td>
-                            <td>cell5_1</td>
-                        </tr>
+                    <tbody className='main-table'>
                     </tbody>
                 </table>
+
+                <br/><br/><br/>
             </div>
         )
     }

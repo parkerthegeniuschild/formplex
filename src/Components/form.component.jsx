@@ -10,8 +10,8 @@ class Register extends Component {
     constructor() {
         const users = [];
 
-        if (localStorage.getItem('users') !== null) {
-            users.push(JSON.parse(localStorage.getItem('users')))
+        if (localStorage.getItem('formplex') !== null) {
+            users.push(JSON.parse(localStorage.getItem('formplex')))
         }
 
         super();
@@ -25,8 +25,6 @@ class Register extends Component {
                 hobby: '',
             }
         };
-
-        console.log('Before Change: ', this.state.users);
     }
 
     addUser = async e => {
@@ -34,22 +32,19 @@ class Register extends Component {
         e.preventDefault();
 
         const newUser = this.state.singleUser;
-        const allUsers = JSON.parse(localStorage.getItem('users'))  || [];
+        const allUsers = JSON.parse(localStorage.getItem('formplex'))  || [];
 
         allUsers.push(newUser);
-        localStorage.setItem('users', JSON.stringify(allUsers));
+        localStorage.setItem('formplex', JSON.stringify(allUsers));
 
         await this.setState({
             users: allUsers
         });
 
-        // console.log('after change', this.state.users);
-
         window.location.reload();
     };
 
     handleOnChange = e => {
-
         e.preventDefault();
         const field = e.target.className.split(' ')[1];
         const value = e.target.value;
@@ -61,34 +56,6 @@ class Register extends Component {
             singleUser
         });
     };
-
-    // removeUser = index => {
-    //     let newUsers = [...this.state.users];
-    //
-    //     // remove element
-    //     newUsers.splice(index, 1);
-    //
-    //     // decrement greater indexes
-    //     for (let i = index; i < newUsers.length; i++) {
-    //         newUsers[i].index -= 1;
-    //     }
-    //
-    //     // update state
-    //     this.setState({
-    //         users: newUsers,
-    //     })
-    // };
-
-    // setDate = (index, date, dateString) => {
-    //   let newUsers = [...this.state.users];
-    //   newUsers[index].date = date;
-    //   newUsers[index].dateString = dateString;
-    //
-    //   // initialize the state
-    //     this.setState({
-    //         users: newUsers,
-    //     })
-    // };
 
     render() {
         return (
@@ -114,46 +81,15 @@ class Register extends Component {
                     <Input className='hobby' placeholder='Hobby'/>
                 </p>
 
-                <br/><br/><br/>
+                <br/>
 
                 <Button className='submit-btn' onClick={this.addUser}> SUBMIT FORM </Button>
 
-                <br/><br/>
+                <br/><br/><br/><br/>
 
-                {/*<List*/}
-                {/*    locale={{ emptyText: 'No users found' }}*/}
-                {/*    dataSource={this.state.users}*/}
-                {/*    renderItem={item => (*/}
-                {/*        <List.Item>{item.data}</List.Item>*/}
-                {/*    )}*/}
-                {/*/>*/}
             </div>
         );
     };
 }
-
-// class User extends React.Component {
-//     remove = () => {
-//         this.props.removeUser(this.props.user.index);
-//     };
-//
-//     render() {
-//         return (
-//             <div>
-//                 <List.Item
-//                     actions={[
-//                         <Icon
-//                             type='closed-circle'
-//                             theme='filled'
-//                             onClick={this.remove}
-//                             />
-//                     ]}
-//                     >
-//                     {this.props.todo.content}
-//                 </List.Item>
-//             </div>
-//         );
-//     }
-// }
 
 export default Register
