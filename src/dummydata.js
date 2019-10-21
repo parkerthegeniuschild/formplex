@@ -2,31 +2,24 @@ const dummyData = [
   {
     "first_name":"John",
     "last_name":"Doe",
-    "birthday":"1965-01-02",
+    "birthday":"Jan 02 1965",
     "age":"45",
     "hobby":"Music"
   },
   {
     "first_name":"Jane",
-    "last_name":"Doe",
-    "birthday":"1970-12-12",
+    "last_name":"Luther",
+    "birthday":"Dec 12 1970",
     "age":"30",
     "hobby":"Netflix"
   },
   {
     "first_name":"Baby",
-    "last_name":"Doe",
-    "birthday":"2000-08-08",
+    "last_name":"Nivea",
+    "birthday":"Aug 09 2000",
     "age":"2",
     "hobby":"Food"
   },
-  {
-    "first_name":"GrandPa",
-    "last_name":"Doe",
-    "birthday":"1932-05-09",
-    "age":"120",
-    "hobby":"Kai Kai"
-  }
 ];
 
 export default dummyData;

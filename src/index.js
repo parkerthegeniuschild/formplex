@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Form from './Components/form.component';
 import Header from "./Components/header.component";
 import Table from "./Components/table.component";
+import WrappedRegistrationForm from './Components/newform.controller';
 
 import './index.css';
+import 'antd/dist/antd.css';
 import './Components/table.component.css'
 import * as serviceWorker from './serviceWorker';
 
@@ -14,7 +15,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Header />
-                <Form />
+                <WrappedRegistrationForm />
                 <Table />
             </div>
         )

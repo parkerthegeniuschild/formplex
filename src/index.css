@@ -7,21 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .App {
-  text-align: center;
-  font-family: sans-serif;
+  font-family: Gloria Hallelujah, cursive;
+  font-size: 1.3rem;
 }
 
-.form-container {
-  width: 100%;
-  margin: 0 auto;
-  background: #fff;
-  top: 30px;
+.ant-form-horizontal {
+  height: fit-content;
+}
+
+.ant-col {
+  font-size: 2rem;
 }
 
 .header-container {
@@ -34,13 +30,25 @@ code {
 .logo {
   color: #8e5b00;
   margin-top: 0;
-  width: fit-content;
+  width: 100%;
   margin-left: 10px;
   text-transform: uppercase;
-  font-family: 'Fascinate Inline', cursive;
-  font-size: 40px;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 32px;
   padding-top: 0;
+  text-align: center;
 }
+
+.marquee {
+  animation: marquee 15s alternate-reverse infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(100%, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
 
 .App-header {
   background-color: #282c34;
@@ -53,25 +61,17 @@ code {
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
-}
-
-.ant-calendar-picker-input {
-  width: 737px !important;
-  display: flex;
-}
-
 .ant-input {
   border: 1px solid #8e5b00 !important;
-  width: 70%;
 }
 
 .ant-btn {
   border: 1px solid #ac7c25 !important;
-  width: 30%;
   background: #ac7c25;
-  color: #fff;
+}
+
+.ant-btn:hover {
+  background: #896200;
 }
 
 .submit-btn {
@@ -81,55 +81,10 @@ code {
   text-align: center;
 }
 
-h1 {
-  font-size: 30px;
-  color: #8a000a
-}
-
-.controls {
-  display: none;
-  margin: 0 auto;
-  text-transform: uppercase;
-  height: auto;
-  width: fit-content;
-  font-weight: bolder;
-  font-size: larger;
-  padding-top: 2px;
-  flex-direction: row;
-
-}
-
-.description {
-  width: fit-content;
-  margin-left: 1%;
-}
-
 .motto {
-  font-size: medium;
+  font-size: 1.5rem;
   font-weight: bold;
-  animation: blinker 3s linear infinite;
-  font-family: Tahoma, serif;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-
-.view {
-  cursor: pointer;
-  width: fit-content;
-  background: skyblue;
-  justify-content: end;
-  padding: 6px;
-  margin-left: 300px;
-}
-
-.register {
-  cursor: pointer;
-  background: #09d3ac;
-  width: fit-content;
-  padding: 6px;
-  justify-content: left;
+  transition: all 3s;
+  font-family: 'Liu Jian Mao Cao', cursive;
+  text-transform: lowercase;
 }
