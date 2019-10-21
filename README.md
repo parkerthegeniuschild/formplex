@@ -14,6 +14,8 @@ The project uses the Ant Design library and persists data to localStorage.
 ![Screenie 3](https://i.imgur.com/B2Br4M0.png)
 ---
 
+## Live Project Link
+You can try a live version of the app hosted on ```Google Firebase``` here: [FormPlex](https://formplex.firebaseapp.com)
 
 ## Available Scripts
 
