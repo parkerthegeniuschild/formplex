@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-// import { Button } from "antd";
-// import Table from "./table.component";
 
 class Header extends Component {
     render() {
         return (
             <div className='header-container'>
-                <div className="description">
-                    <h1>
-                        Form Plex ... <span className='motto'>registration made easy</span>
-                    </h1>
+                <div className="logo">
+                    formplex <span className='motto'> ... registration made easy !!!</span>
                 </div>
 
                 <div className="controls">

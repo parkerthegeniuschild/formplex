@@ -9,6 +9,7 @@ import './Components/table.component.css'
 import * as serviceWorker from './serviceWorker';
 
 class App extends Component {
+
     render() {
         return (
             <div className="App">
