@@ -118,7 +118,7 @@ class RegistrationForm extends Component {
                                     message: "Please select your birthday!"
                                 }
                             ]
-                        })(<DatePicker showTime format="DD-MM-YYYY" />)}
+                        })(<DatePicker format="DD-MM-YYYY" />)}
                     </FormItem>
 
                     <FormItem
