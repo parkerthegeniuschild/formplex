@@ -13,7 +13,6 @@ export default class Table extends Component {
 
         // if there is data, then don't seed
         if (!localStorage.getItem('formplex')) {
-            console.log(dummyData);
             localStorage.setItem('formplex', JSON.stringify(dummyData));
         }
     };
