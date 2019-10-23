@@ -1,31 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from "./Components/header.component";
-import Table from "./Components/table.component";
-import WrappedRegistrationForm from './Components/newform.controller';
-
-import './index.css';
-import 'antd/dist/antd.css';
-import './Components/table.component.css'
+import App from './components/main.component'
 import * as serviceWorker from './serviceWorker';
+import { Provider } from "react-redux";
+import store from './store/index.store'
+import './assets/css/index.css';
 
-class App extends Component {
+const rootElement = document.getElementById('root');
 
-    render() {
-        return (
-            <div className="App">
-                <Header />
-                <WrappedRegistrationForm />
-                <Table />
-            </div>
-        )
-    }
-}
+ReactDOM.render(
+    <Provider store={store}>
+    <App />
+    </Provider>
+    , rootElement
+);
 
-const rootElement = document.querySelector('#root');
-ReactDOM.render(<App />, rootElement);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

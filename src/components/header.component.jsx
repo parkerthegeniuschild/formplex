@@ -1,15 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Header extends Component {
-    render() {
+const Header =() => {
         return (
             <div className='header-container'>
-                <div className="logo marquee">
+                <div className="logo">
                     formplex <span className='motto'> ... registration made easy !!!</span>
                 </div>
             </div>
         )
-    }
-}
+};
 
 export default Header;
