@@ -3,15 +3,15 @@
 This is a simple project created with React. It simply updates a user table upon submission and is meant
 to just touch the foundations of React.
 
-The project uses the Ant Design library and persists data to localStorage.
+The project uses the Ant Design library and Redux with Hooks.
 
 # Screenshots
 ---
-![Screenie 1](https://i.imgur.com/ULZrCtA.png)
+![Screenie 1](https://i.imgur.com/cc6PqBl.png)
 ---
-![Screenie 2](https://i.imgur.com/9REbB10.png)
+![Screenie 2](https://i.imgur.com/rOWRg2X.png)
 ---
-![Screenie 3](https://i.imgur.com/B2Br4M0.png)
+![Screenie 3](https://i.imgur.com/GV60SNV.png)
 ---
 
 ## Live Project Link
