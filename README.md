@@ -7,11 +7,11 @@ The project uses the Ant Design library and Redux with Hooks.
 
 # Screenshots
 ---
-![Screenie 1](https://i.imgur.com/cc6PqBl.png)
+![Screenie 1](https://i.imgur.com/KsJPbK5.png)
 ---
-![Screenie 2](https://i.imgur.com/rOWRg2X.png)
+![Screenie 2](https://i.imgur.com/cW0vsRN.png)
 ---
-![Screenie 3](https://i.imgur.com/GV60SNV.png)
+![Screenie 3](https://i.imgur.com/xfbbBry.png)
 ---
 
 ## Live Project Link
