@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  font-family: Gloria Hallelujah, cursive;
+  font-size: 1.3rem;
+}
+
+.ant-form-horizontal {
+  height: fit-content;
+}
+
+.ant-col {
+  font-size: 2rem;
+}
+
+.header-container {
+  background: #c5cbe3;
+  margin: 0 auto;
+  padding-top: 20px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.logo {
+  color: #4056a1;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 32px;
+  padding-top: 0;
+  text-align: center;
+  width: fit-content;
+  overflow: hidden;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.form-container {
+  background: #fff;
+}
+
+.ant-input, .ant-checkbox {
+  border: 1px solid #123c69 !important;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.ant-form-item-required {
+  font-size: 1.2rem !important;
+}
+
+.ant-input:focus, .ant-input:hover {
+  box-shadow: 0 0 10px #123c69;
+  background: transparent;
+}
+
+.ant-btn {
+  border: 1px solid #123c69 !important;
+  background: #123c69;
+}
+
+.ant-btn:hover {
+  background: #c5cbe3;
+  border: none;
+  color: #123c69;
+}
+
+.submit-btn {
+  color: #fff;
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+}
+
+.motto {
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 3s;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-transform: lowercase;
+}
+
+/*new table*/
+
+.ant-list-split {
+  margin: 0 auto !important;
+  width: fit-content !important;
+  align-items: center;
+  font-size: 5rem !important;
+  border: 1px solid #123c69;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 15px 24px;
+}
+
+.ant-list-item-meta-description, .ant-list-item-meta-title {
+  font-size: 1.3rem !important;
+  color: #000;
+  font-family: 'Advent Pro', sans-serif;
+}
