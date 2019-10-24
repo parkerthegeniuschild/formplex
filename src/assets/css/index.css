@@ -94,21 +94,11 @@ body {
   text-transform: lowercase;
 }
 
-/*new table*/
-
-.ant-list-split {
-  margin: 0 auto !important;
-  width: fit-content !important;
-  align-items: center;
-  font-size: 5rem !important;
-  border: 1px solid #123c69;
-  border-radius: 4px;
-  overflow: auto;
-  padding: 15px 24px;
+.ant-table-content {
+  font-size: 1.2rem !important;
+  color: #000;
 }
 
-.ant-list-item-meta-description, .ant-list-item-meta-title {
-  font-size: 1.3rem !important;
-  color: #000;
-  font-family: 'Advent Pro', sans-serif;
+.ant-table-thead > tr > th {
+  background: #c5cbe3 !important;
 }

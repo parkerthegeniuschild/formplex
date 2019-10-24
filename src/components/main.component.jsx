@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./header.component";
 import RegistrationForm from "./newform.component";
-import Table from "./list.component";
+import UsersTable from "./table.component";
 import 'antd/dist/antd.css';
 
 
@@ -10,7 +10,7 @@ const App = () => {
         <div className="App">
             <Header />
             <RegistrationForm />
-            <Table/>
+            <UsersTable/>
             <br/><br/>
         </div>
     );
