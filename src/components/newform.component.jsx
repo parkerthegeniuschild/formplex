@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
-import {Button, Checkbox, DatePicker, Form, Icon, Input, Tooltip} from "antd";
-import {addNewUser, listAllUsers} from '../actions/user.action';
-import {useDispatch} from 'react-redux';
+import React, { useState } from "react";
+import { Button, Checkbox, DatePicker, Form, Icon, Input, Tooltip } from "antd";
+import { addUser } from '../actions/user.action';
+import { useDispatch } from 'react-redux';
 import "antd/dist/antd.css";
 
 const FormItem = Form.Item;
@@ -34,12 +34,7 @@ const RegistrationForm = (props) => {
 
     const [ confirmDirty ] = useState(false);
     const { getFieldDecorator } = props.form;
-
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(listAllUsers());
-    }, [dispatch]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -50,19 +45,23 @@ const RegistrationForm = (props) => {
                     return alert('Age must be a valid number');
                 }
 
-                if (values["agreement"]) {
+                if (values['agreement']) {
+                    // convert antd birthday to string
                     values.birthday = values.birthday.toString().slice(4, 15);
-                    delete values["agreement"];
-                    return storageMgt(values);
+
+                    // remove the agreement from user object; not needed
+                    delete values['agreement'];
+
+                    return userManagement(values);
                 }
 
-                return alert("Please accept the terms and conditions");
+                return alert('Please accept the terms and conditions');
             }
         });
     };
 
-     const storageMgt = async (data) => {
-         dispatch(addNewUser(data));
+     const userManagement = async (data) => {
+         dispatch(addUser(data));
          props.form.resetFields();
     };
 

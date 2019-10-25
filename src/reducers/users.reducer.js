@@ -1,29 +1,40 @@
 const initialState = {
     users: [],
-    is_created: false
-};
-
-// helper function to add new user to list of users
-const addNewUser = (allUsers, newUser) => {
-    allUsers.push(newUser);
-    return allUsers;
+    dataLoading: null
 };
 
 const userReducer = (currentState = initialState, action) => {
     switch (action.type) {
-        case 'LIST_ALL_USERS': {
+        case 'FETCH_USERS_FAILED': {
+            return {
+                ...currentState,
+                dataLoading: false
+            };
+        }
+        case 'FETCH_USERS_SUCCEEDED': {
+            const { payload: newUser } = action;
+            return {
+                ...currentState,
+                users: [...newUser],
+                dataLoading: false
+            };
+        }
+        case 'CREATE_USER_FAILED': {
             return {
                 ...currentState,
             };
         }
-        case 'ADD_NEW_USER': {
-            const { users } = currentState;
-            const { payload: newUser } = action;
+        case 'START_FETCHING': {
             return {
                 ...currentState,
-                is_created: true,
-                users: addNewUser(users, newUser),
-            };
+                dataLoading: true,
+            }
+        }
+        case 'FINISH_FETCHING': {
+            return {
+                ...currentState,
+                dataLoading: false
+            }
         }
         default:
             return currentState;

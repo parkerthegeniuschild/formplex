@@ -1,6 +1,6 @@
 import React, { shallowEqual } from "react";
-import { useSelector } from "react-redux";
-import { Table, Divider } from 'antd';
+import { useSelector} from "react-redux";
+import { Table, Spin, Divider } from 'antd';
 import "antd/dist/antd.css";
 
 const columns = [
@@ -32,12 +32,17 @@ const columns = [
         key: 'hobby',
     },
     {
+        title: 'User ID',
+        dataIndex: '_id',
+        key: '_id',
+    },
+    {
         title: 'Action',
         key: 'action',
-        render: (text, record) => (
+        render: () => (
             <span>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a>Invite {record.name}</a>
+        <a>Invite</a>
         <Divider type="vertical" />
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a>Delete</a>
@@ -51,12 +56,23 @@ const COLLECTION = 'user';
 
 const UsersTable = () => {
 
-    const { users } = useSelector(state => ({
+    const { users, dataLoading } = useSelector(state => ({
         users: state[COLLECTION].users,
+        dataLoading: state[COLLECTION].dataLoading,
     }), shallowEqual);
 
+    while (dataLoading) {
+        return (
+            <div className="spin-loading">
+                <br/>
+                <Spin size="large" />
+                <br/>
+            </div>
+        )
+    }
+
     return (
-        <Table columns={columns} dataSource={users} />
+        <Table columns={columns} dataSource={users} rowKey="_id"/>
     )
 };
 
