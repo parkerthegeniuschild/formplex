@@ -1,9 +1,11 @@
 # FormPlex
 
-This is a simple project created with React. It simply updates a user table upon submission and is meant
-to just touch the foundations of React.
+This is a simple project created with React. It simply updates a user table upon submission.
 
-The project uses the Ant Design library and Redux with Hooks.
+The project uses the Ant Design library and Redux with Hooks. Plus, it uses Redux-Saga and the Firebase Realtime Database
+encompassed in an `event channel` to send out realtime updates.
+
+This means any updates (insertion, update, deletion, etc) will be seen in realtime across different browsers and devices; even geographic locations; zero delays.
 
 # Screenshots
 ---
