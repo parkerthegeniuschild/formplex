@@ -2,10 +2,16 @@ import React from 'react';
 import Header from "./header.component";
 import RegistrationForm from "./newform.component";
 import UsersTable from "./table.component";
+import { useDispatch } from "react-redux";
+import { fetchUsers } from "../actions/user.action";
+
 import 'antd/dist/antd.css';
 
-
 const App = () => {
+
+    const dispatch = useDispatch();
+    dispatch(fetchUsers());
+
     return (
         <div className="App">
             <Header />

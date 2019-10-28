@@ -97,8 +97,21 @@ body {
 .ant-table-content {
   font-size: 1.2rem !important;
   color: #000;
+  border: 1px solid #123c69 !important;
 }
 
 .ant-table-thead > tr > th {
   background: #c5cbe3 !important;
+  border-color: #123c69;
+}
+
+.ant-table-wrapper {
+  margin: auto 2% !important;
+}
+
+.spin-loading {
+  text-align: center;
+  /*border: 1px solid #123c69;*/
+  margin: auto 2%;
+  padding-top: 30px;
 }
