@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Checkbox, DatePicker, Form, Icon, Input, Tooltip } from "antd";
-import { addUser } from '../actions/user.action';
+import { createUserAction } from '../actions/user.action';
 import { useDispatch } from 'react-redux';
 import "antd/dist/antd.css";
 
@@ -60,8 +60,8 @@ const RegistrationForm = (props) => {
         });
     };
 
-     const userManagement = async (data) => {
-         dispatch(addUser(data));
+     const userManagement = async (payload) => {
+         dispatch(createUserAction(payload));
          props.form.resetFields();
     };
 
