@@ -1,8 +1,4 @@
-export const fetchUsers = () => ({
-  type: 'FETCH_USERS_REQUESTED',
-});
-
-export const addUser = payload => ({
+export const createUserAction = payload => ({
     type: 'CREATE_USER_REQUESTED',
     payload,
 });

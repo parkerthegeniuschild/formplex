@@ -11,6 +11,7 @@ const userReducer = (currentState = initialState, action) => {
                 dataLoading: false
             };
         }
+
         case 'FETCH_USERS_SUCCEEDED': {
             const { payload: newUser } = action;
             return {
@@ -19,23 +20,27 @@ const userReducer = (currentState = initialState, action) => {
                 dataLoading: false
             };
         }
+
         case 'CREATE_USER_FAILED': {
             return {
                 ...currentState,
             };
         }
-        case 'START_FETCHING': {
+
+        case 'START_LOADING': {
             return {
                 ...currentState,
                 dataLoading: true,
             }
         }
-        case 'FINISH_FETCHING': {
+
+        case 'FINISH_LOADING': {
             return {
                 ...currentState,
                 dataLoading: false
             }
         }
+
         default:
             return currentState;
     }

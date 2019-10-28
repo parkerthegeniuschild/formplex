@@ -1,14 +1,17 @@
-import { fork, put, take, takeEvery, takeLatest } from 'redux-saga/effects';
+import { fork, put, takeLatest, take } from 'redux-saga/effects';
 import { eventChannel } from 'redux-saga'
 import axios from 'axios';
-import databaseRef from '../config/firebase';
+import firebase from "../config/firebase";
 
 const API = 'https://us-central1-formplex.cloudfunctions.net/users';
 
 function* startListener() {
-    const channel = new eventChannel(emit => {
-        const listener = databaseRef.on("value", snapshot => {
-            emit({ data: snapshot.val() || {} });
+
+    const channel = new eventChannel(emitter => {
+        const listener = firebase.on("value", snapshot => {
+            emitter({
+                data: snapshot.val() || {}
+            });
         });
 
         return () => {
@@ -17,43 +20,36 @@ function* startListener() {
     });
 
     while (true) {
-        yield take(channel);
-        yield put({
-            type: 'FETCH_USERS_SUCCEEDED'
-        });
-    }
-}
 
-function* fetchUsers() {
-    try {
-        yield put({
-            type: 'START_FETCHING'
-        });
+        const {data} = yield take(channel);
 
-        const res = (yield axios({
-            url: API,
-            method: 'get'
-        })).data.users;
-
-        const payload = yield Object.keys(res).map(key => res[key]);
-
-        // make sure payload has id else wait for it
-        const length = payload.length - 1;
-
-        if (payload[length]['_id']) {
+        try {
+            // display the spinner until work is done
             yield put({
-                type: 'FETCH_USERS_SUCCEEDED',
-                payload
+                type: 'START_LOADING'
             });
-        } else {
+
+            const payload = yield Object.keys(data).map(key => data[key]);
+
+            // make sure payload has id else wait for it
+            const length = payload.length - 1;
+
+            if (payload[length]['_id']) {
+                yield put({
+                    type: 'FETCH_USERS_SUCCEEDED',
+                    payload
+                });
+            } else {
+                // stop the spinner
+                yield put({
+                    type: 'STOP_LOADING'
+                });
+            }
+        } catch (e) {
             yield put({
-                type: 'FETCH_USERS_REQUESTED'
-            })
+                type: 'FETCH_USERS_FAILED'
+             });
         }
-    } catch (e) {
-        yield put({
-            type: 'FETCH_USERS_FAILED'
-        })
     }
 }
 
@@ -64,19 +60,19 @@ function* createUser(data) {
             method: 'post',
             data: data.payload
         });
-
-        yield put({
-            type: 'FETCH_USERS_REQUESTED'
-        });
     } catch (e) {
         yield put({
             type: 'CREATE_USER_FAILED'
-        })
+        });
+
+        // stop the spinner
+        yield put({
+            type: 'FINISH_LOADING'
+        });
     }
 }
 
 export default function* rootSaga() {
     yield fork(startListener);
-    yield takeEvery("FETCH_USERS_REQUESTED", fetchUsers);
     yield takeLatest("CREATE_USER_REQUESTED", createUser);
 }
